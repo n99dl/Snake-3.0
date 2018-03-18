@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1521284908 source:e:\lab\game projects\snake 3.0\main.cpp
+	<bits/stdc++.h>
+	<windows.h>
+	<conio.h>
+	"Snake2-0.hpp"
+
+1521284928 e:\lab\game projects\snake 3.0\snake2-0.hpp
+
+1521196832 source:e:\lab\game projects\snake 3.0\drawing.cpp
+	<windows.h>
+	<conio.h>
+
+1521285017 source:e:\lab\game projects\snake 3.0\snake2-0.cpp
+	<ctime>
+	<conio.h>
+	<windows.h>
+	<bits/stdc++.h>
+
+1521196949 e:\lab\game projects\snake 3.0\drawing.hpp
+
