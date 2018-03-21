@@ -12,6 +12,7 @@
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
+					<Add option="-std=c++11" />
 					<Add option="-g" />
 				</Compiler>
 			</Target>
@@ -30,20 +31,47 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-std=c++11" />
 			<Add option="-fexceptions" />
+			<Add option="-std=c++11" />
 		</Compiler>
-		<Unit filename="Original Code.cpp">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
 		<Unit filename="Snake2-0.cpp">
 			<Option target="Debug" />
 		</Unit>
-		<Unit filename="Snake2-0.hpp" />
+		<Unit filename="Snake2-0.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="Snake2-1.cpp">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="Snake2-1.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="Snake2-2.cpp">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="Snake2-2.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="drawing.cpp">
 			<Option target="Debug" />
 		</Unit>
-		<Unit filename="drawing.hpp" />
+		<Unit filename="drawing.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="main.cpp" />
+		<Unit filename="others.cpp">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="others.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="snake.cpp">
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="snake.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<envvars />

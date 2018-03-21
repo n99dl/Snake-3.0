@@ -9,9 +9,11 @@ using namespace std;
 
 typedef pair<int,int> ii;
 
-ii generate_food(int regenerate,int playground[][201]);
-void gotoxy(int y, int x);
-void textColor(int x);
+void printPlayground(int playground[][201],int mapH,int mapW);
+void setup_map(int Map,int mapH,int mapW,int playground[][201]);
+ii generate_food(int regenerate,int playground[][201],int mapW,int mapH);
+int choose_speed();
+void changedir(int &dir);
 
 
 
