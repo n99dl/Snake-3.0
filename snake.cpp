@@ -26,8 +26,18 @@ void SNAKE::generate_snake(int x,int y,int playground[][201])
     cout<<head_symbol;
     textColor(10);
 }
+void SNAKE::MoveQueue()
+{
+    for (int i=L;i<=R;i++)
+        coor[i-100]=coor[i];
+    L-=100;
+    R-=100;
+    if (inviR) inviR-=100;
+}
 void SNAKE::MoveHead(int x,int y)
 {
+    if (L>100)
+    MoveQueue();
     draw(coor[R].first,coor[R].second,snakecolor,sn_symbol);
     coor[++R]=make_pair(x,y);
     draw(coor[R].first,coor[R].second,snakecolor,head_symbol);

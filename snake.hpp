@@ -22,6 +22,7 @@ public:
     void generate_snake(int x,int y,int playground[][201]);
     std::pair<int,int> getHead();
     void MoveHead(int x,int y);
+    void MoveQueue();
     bool PopTail(int playground[][201]);
     int get_snakecolor();
     void set_snakecolor(int color);

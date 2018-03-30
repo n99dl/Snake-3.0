@@ -147,7 +147,8 @@ void move()
         {
             if (inputR)
                 inputR=rreverse_input(snake,movex,movey,dir);
-            generate_special_food(playground,mapW,mapH);
+            //if (!sf.first)
+            sf=generate_special_food(playground,mapW,mapH);
         }
         generate_food(1,playground,mapW,mapH);
     }
@@ -182,7 +183,8 @@ void move()
     if (snake.inviR)
     {
         char tmp=219;
-        draw(snake.coor[snake.inviR].first,snake.coor[snake.inviR++].second,snake.get_snakecolor(),tmp);
+        draw(snake.coor[snake.inviR].first,snake.coor[snake.inviR].second,snake.get_snakecolor(),tmp);
+        snake.inviR++;
     }
 }
 
@@ -231,6 +233,7 @@ void run()
             draw(22,54,10,"Your score: ");
             textColor(13);
             cout<<score;
+            draw(23,54,19,to_string(snake.L)+"   "+to_string(snake.R)+"    "+to_string(snake.length));
             if (dir==2||dir==4)
                 Sleep(1000-speed);
             else
