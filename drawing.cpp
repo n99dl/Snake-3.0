@@ -1,6 +1,7 @@
 #include <conio.h>
 #include <windows.h>
 #include <iostream>
+#include "ColorDisplay.h"
 
 using namespace std;
 

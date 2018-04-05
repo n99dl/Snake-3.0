@@ -7,6 +7,8 @@
 #include "others.hpp"
 #include "Snake2-1.hpp"
 #include "Snake2-2.hpp"
+#include "ColorDisplay.h"
+#include "GUI.hpp"
 
 using namespace std;
 
@@ -94,7 +96,7 @@ void init(int Map)
     }
     food=3;
     setup_map(Map,mapH,mapW,playground);
-    printPlayground(playground,mapH,mapW);
+    printPlayground(playground,mapH,mapW,Map);
     generate_food(1,playground,mapW,mapH);
     switch (Map)
     {
@@ -169,7 +171,7 @@ void move()
         snake.PopTail(playground);
         if (playground[nheadpos_x][nheadpos_y]!=0)
         {
-            if (playground[nheadpos_x][nheadpos_y]!=10)
+            if (playground[nheadpos_x][nheadpos_y]!=10&&playground[nheadpos_x][nheadpos_y]!=-144)
                 start=0;
         }
     }
@@ -251,6 +253,7 @@ int main()
     srand(time(NULL));
     system("MODE 100,30");
     textColor(10);
+    printMainMenu();
     cout<<"n99dl's snake 3.0\n";
     cout<<"Use WASD or Arrow Key to move the snake. Eat food to earn length\n";
     cout<<"And... enjoy the special food. Who know what you gonna get?\n";

@@ -33,8 +33,15 @@
 			<Add option="-Wall" />
 			<Add option="-std=c++11" />
 			<Add option="-fexceptions" />
-			<Add option="-std=c++11" />
 		</Compiler>
+		<Unit filename="ColorDisplay.cpp" />
+		<Unit filename="ColorDisplay.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="GUI.cpp" />
+		<Unit filename="GUI.hpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="Snake2-0.cpp">
 			<Option target="Debug" />
 		</Unit>

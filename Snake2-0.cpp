@@ -1,14 +1,17 @@
 #include <ctime>
 #include <algorithm>
 #include <iostream>
+#include <windows.h>
 #include "drawing.hpp"
+#include "ColorDisplay.h"
 #include <conio.h>
 
 using namespace std;
 
-void printPlayground(int playground[][201],int mapH,int mapW)
+void printPlayground(int playground[][201],int mapH,int mapW,int Map)
 {
-    gotoxy(1,1);
+    ColorDisplay screen(48,18,{1,1});
+    /*gotoxy(1,1);
     for (int i=1; i<=mapH; i++)
     {
         for (int j=1; j<=mapW; j++)
@@ -22,6 +25,51 @@ void printPlayground(int playground[][201],int mapH,int mapW)
             cout<<" ";
         }
         cout<<"\n";
+    }*/
+    screen.setBackGroundColor(BLUE*16);
+    screen.resetDisplay();
+    if (Map==1)
+    {
+        ColorDisplay middle(18,6,{16,7});
+        middle.resetDisplay();
+    }
+    else
+        if (Map==2)
+    {
+        screen.drawingLineHorizontal(1,10,48);
+        screen.drawingLineVertical(24,1,18);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLACK*16),11,0);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLACK*16),12,0);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLACK*16),13,0);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLACK*16),11+25,0);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLACK*16),12+25,0);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLACK*16),13+25,0);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLACK*16),11+25,19);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLACK*16),12+25,19);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLACK*16),13+25,19);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLACK*16),11,19);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLACK*16),12,19);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLACK*16),13,19);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLACK*16),0,15);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLACK*16),0,14);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLACK*16),49,15);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLACK*16),49,14);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLUE*16),24,15);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLUE*16),24,14);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLACK*16),49,5);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLACK*16),49,4);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLACK*16),0,5);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLACK*16),0,4);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLUE*16),24,5);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLUE*16),24,4);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLUE*16),11,10);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLUE*16),12,10);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLUE*16),13,10);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLUE*16),11+25,10);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLUE*16),12+25,10);
+        screen.setColorCharacterAtPosition(ColorCharacter(' ',BLUE*16),13+25,10);
+        /*FillConsoleOutputCharacter(outConsole, colorchar.character, 1, position, &garbage);
+        FillConsoleOutputAttribute(outConsole, colorchar.color, 1, position, &garbage);*/
     }
     draw(1,52,10,"Press W or Arrow UP to go up");
     draw(2,52,10,"Press D to Arrow RIGHT go right");
@@ -54,10 +102,10 @@ void setup_map(int Map,int mapH,int mapW,int playground[][201])
             playground[11][i]=-1;
         for (int i=1; i<=20; i++)
             playground[i][25]=-1;
-        playground[1][12]=playground[1][13]=playground[20][12]=playground[20][13]=playground[1][37]=playground[1][38]
-                                            =playground[20][37]=playground[20][38]=playground[5][1]=playground[6][1]=playground[5][50]=playground[6][50]
+        playground[1][12]=playground[1][13]=playground[1][14]=playground[20][12]=playground[20][13]=playground[20][14]=playground[1][37]=playground[1][38]=playground[1][39]
+                                            =playground[20][37]=playground[20][38]=playground[20][39]=playground[5][1]=playground[6][1]=playground[5][50]=playground[6][50]
                                                     =playground[15][1]=playground[16][1]=playground[15][50]=playground[16][50]=10;
-        playground[11][12]=playground[11][13]=playground[11][37]=playground[11][38]=playground[5][25]=playground[6][25]=0;
+        playground[11][12]=playground[11][13]=playground[11][14]=playground[11][37]=playground[11][38]=playground[11][39]=playground[5][25]=playground[6][25]=0;
         playground[15][25]=playground[16][25]=0;
     }
 }
