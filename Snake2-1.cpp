@@ -8,6 +8,7 @@
 
 using namespace std;
 
+
 void half_size(SNAKE &snake,int playground[][201])
 {
     int length=snake.length;

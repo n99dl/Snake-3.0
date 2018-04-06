@@ -1,72 +1,79 @@
 #include <bits/stdc++.h>
 #include <windows.h>
 #include <conio.h>
-#include "Snake2-0.hpp"
-#include "drawing.hpp"
-#include "snake.hpp"
-#include "others.hpp"
-#include "Snake2-1.hpp"
-#include "Snake2-2.hpp"
-#include "ColorDisplay.h"
-#include "GUI.hpp"
+#include "Snake2-0.hpp"                 ///First update : Setting up maps (3 maps), Print Playground and normal controls of the snake.
+#include "drawing.hpp"                  ///Drawing functions and some simple interactions with console windows.
+#include "snake.hpp"                    ///Snake Class: Managing snake's attribute, Snake's movement, and generating snake.
+#include "others.hpp"                   ///Others function: to_String (number to string)
+#include "Snake2-1.hpp"                 ///Second update : Adding Special foods, 5 effects (Half size, Food spams, Invisible Snake, Toxic spams, Reverse Input)
+#include "Snake2-2.hpp"                 ///Third update : New feature of Special foods (Adding 1 new effects : Teleport )
+#include "ColorDisplay.h"               ///ColorDisplay : Tool to draw playground (Creator : khoi~n.le). Modified : Add drawing vertical and horizontal line functions and fast init ColorCharacters.
+#include "GUI.hpp"                      ///Graphic User Interface : Drawing Main menu and other notifications.
 
 using namespace std;
 
 ifstream fi;
 ofstream fo;
 
-typedef pair<int,int> ii;
+/// Pair of int as coordination
+typedef pair<int,int> COORDINATION;
 
-int mapW=50;
-int mapH=20;
+const int MAP_WIDTH=50;
+const int MAP_HEIGHT=20;
+/// Managing what is on the playground
 int playground[201][201];
-// Snake properties
+/// Snake properties
 bool start=0;
 int speed;
 SNAKE snake;
 
+///Best score
 int bscore=0;
+///Moving Directions
 int movex[]= {0,-1,0,1,0};
 int movey[]= {0,0,1,0,-1};
 int score;
 int food;
 int require[]= {50,150,1000};
-//Snake 2.2
+///Snake 2.2
 int Map=0;
-ii sf;
-ii toxic[30+1];
+COORDINATION sf;
+COORDINATION toxic[30+1];
 bool inputR=0;
 bool tlp=0;
 int dir;
 
-pair<int,int> eat_specialfood()
+/// Generating specials effect when eating special foods. Return new coordination for the special foods.
+COORDINATION eat_specialfood()
 {
     srand(time(NULL));
     score+=10;
     int luck=rand()%6;
     switch (luck)
     {
-    case 0:
+    case HALF_SIZE:
         half_size(snake,playground);
         break;
-    case 1:
-        food_spam(playground,mapW,mapH);
+    case FOOD_SPAM:
+        food_spam(playground,MAP_WIDTH,MAP_HEIGHT);
         break;
-    case 2:
+    case INVISIBLE:
         invisible(snake);
         break;
-    case 3:
-        toxic_spam(toxic,playground,mapW,mapH);
+    case TOXIC_SPAM:
+        toxic_spam(toxic,playground,MAP_WIDTH,MAP_HEIGHT);
         break;
-    case 4:
+    case REVERSE_INPUT:
         inputR=reverse_input(snake,movex,movey,dir);
         break;
-    case 5:
+    case TELEPORT:
         tlp=1;
         break;
     }
     return make_pair(0,0);
 }
+
+/// Initializing playground and Gameplay Interface
 
 void init(int Map)
 {
@@ -95,36 +102,41 @@ void init(int Map)
         }
     }
     food=3;
-    setup_map(Map,mapH,mapW,playground);
-    printPlayground(playground,mapH,mapW,Map);
-    generate_food(1,playground,mapW,mapH);
+    setup_map(Map,MAP_HEIGHT,MAP_WIDTH,playground);
+    printPlayground(playground,MAP_HEIGHT,MAP_WIDTH,Map);
+    generate_food(1,playground,MAP_WIDTH,MAP_HEIGHT);
     switch (Map)
     {
-    case 0:
-        snake.generate_snake(mapH/2,mapW/2,playground);
+    case PLAIN:
+        snake.generate_snake(MAP_HEIGHT/2,MAP_WIDTH/2,playground);
         break;
-    case 1:
+    case VOID:
         snake.generate_snake(10,40,playground);
         break;
-    case 2:
+    case MATRIX:
         snake.generate_snake(17,4,playground);
         break;
     }
 }
 
+/// Moving the snake to the directed direction and interact with other objects on the map
+
 void move()
 {
-    ii temp=snake.getHead();
+    COORDINATION temp=snake.getHead();
     int nheadpos_x=temp.first+movex[dir];;
     int nheadpos_y=temp.second+movey[dir];
     if (playground[nheadpos_x][nheadpos_y]==10)
     {
         if (nheadpos_x==1)
             nheadpos_x=19;
+        else
         if (nheadpos_x==20)
             nheadpos_x=2;
+        else
         if (nheadpos_y==1)
             nheadpos_y=49;
+        else
         if (nheadpos_y==50)
             nheadpos_y=2;
     }
@@ -141,7 +153,7 @@ void move()
         {
             draw(sf.first,sf.second,17,' ');
             playground[sf.first][sf.second]=0;
-            sf=ii(0,0);
+            sf=COORDINATION(0,0);
         }
         score++;
         food++;
@@ -150,9 +162,9 @@ void move()
             if (inputR)
                 inputR=rreverse_input(snake,movex,movey,dir);
             //if (!sf.first)
-            sf=generate_special_food(playground,mapW,mapH);
+            sf=generate_special_food(playground,MAP_WIDTH,MAP_HEIGHT);
         }
-        generate_food(1,playground,mapW,mapH);
+        generate_food(1,playground,MAP_WIDTH,MAP_HEIGHT);
     }
     else if (playground[nheadpos_x][nheadpos_y]==-4)
     {
@@ -179,7 +191,7 @@ void move()
     playground[nheadpos_x][nheadpos_y]=1;
     if (tlp)
     {
-        teleport(snake,playground,mapH,mapW);
+        teleport(snake,playground,MAP_HEIGHT,MAP_WIDTH);
         tlp=0;
     }
     if (snake.inviR)
@@ -190,17 +202,21 @@ void move()
     }
 }
 
+/// Initializing special foods attribute
+
 void special_food_init()
 {
     if (snake.inviR)
         reverse_invi(snake);
     if (inputR)
         inputR=rreverse_input(snake,movex,movey,dir);
-    sf=ii(0,0);
+    sf=COORDINATION(0,0);
     tlp=0;
     toxic[0].first=0;
     dir=1;
 }
+
+/// Play the game step by step
 void run()
 {
     while (1)
@@ -247,13 +263,15 @@ void run()
 
 int main()
 {
+    /// Opening file to read local high score
     fi.open("highscore.txt");
     fi>>bscore;
     fi.close();
+    /// Closing file
     srand(time(NULL));
     system("MODE 100,30");
-    textColor(10);
     printMainMenu();
+    textColor(10);
     cout<<"n99dl's snake 3.0\n";
     cout<<"Use WASD or Arrow Key to move the snake. Eat food to earn length\n";
     cout<<"And... enjoy the special food. Who know what you gonna get?\n";
@@ -287,9 +305,11 @@ int main()
         }
         else
             cout<<"Best score: "<<bscore<<"\n";
+        /// Opening file to write new local high score
         fo.open("highscore.txt");
         fo<<bscore;
         fo.close();
+        /// Close file
         cout<<"Would you like to retry ? y/n?\n";
         while (1)
         {

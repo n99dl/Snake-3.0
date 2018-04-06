@@ -82,3 +82,86 @@
 	"drawing.hpp"
 	"ColorDisplay.h"
 
+1522845958 source:c:\users\ccne\desktop\snake-3.0-master\colordisplay.cpp
+	"ColorDisplay.h"
+	<iostream>
+
+1522845958 c:\users\ccne\desktop\snake-3.0-master\colordisplay.h
+	<windows.h>
+	<vector>
+
+1522845958 source:c:\users\ccne\desktop\snake-3.0-master\drawing.cpp
+	<conio.h>
+	<windows.h>
+	<iostream>
+	"ColorDisplay.h"
+
+1522845958 source:c:\users\ccne\desktop\snake-3.0-master\gui.cpp
+	<iostream>
+	<bits/stdc++.h>
+	"drawing.hpp"
+	"ColorDisplay.h"
+
+1522845958 c:\users\ccne\desktop\snake-3.0-master\drawing.hpp
+	<string>
+
+1522845958 source:c:\users\ccne\desktop\snake-3.0-master\others.cpp
+	<string>
+	<sstream>
+
+1522845958 source:c:\users\ccne\desktop\snake-3.0-master\snake.cpp
+	"snake.hpp"
+	"drawing.hpp"
+	<iostream>
+
+1522845958 c:\users\ccne\desktop\snake-3.0-master\snake.hpp
+	<algorithm>
+
+1522845958 source:c:\users\ccne\desktop\snake-3.0-master\snake2-0.cpp
+	<ctime>
+	<algorithm>
+	<iostream>
+	<windows.h>
+	"drawing.hpp"
+	"ColorDisplay.h"
+	<conio.h>
+
+1522998817 source:c:\users\ccne\desktop\snake-3.0-master\snake2-1.cpp
+	<iostream>
+	<algorithm>
+	<ctime>
+	<cstdlib>
+	"drawing.hpp"
+	"snake.hpp"
+	"Snake2-0.hpp"
+
+1522999283 c:\users\ccne\desktop\snake-3.0-master\snake2-0.hpp
+
+1522845958 source:c:\users\ccne\desktop\snake-3.0-master\snake2-2.cpp
+	<cstdlib>
+	"snake.hpp"
+	"drawing.hpp"
+
+1522999289 source:c:\users\ccne\desktop\snake-3.0-master\main.cpp
+	<bits/stdc++.h>
+	<windows.h>
+	<conio.h>
+	"Snake2-0.hpp"
+	"drawing.hpp"
+	"snake.hpp"
+	"others.hpp"
+	"Snake2-1.hpp"
+	"Snake2-2.hpp"
+	"ColorDisplay.h"
+	"GUI.hpp"
+
+1522845958 c:\users\ccne\desktop\snake-3.0-master\others.hpp
+	<string>
+
+1522998830 c:\users\ccne\desktop\snake-3.0-master\snake2-1.hpp
+
+1522998849 c:\users\ccne\desktop\snake-3.0-master\snake2-2.hpp
+
+1522845958 c:\users\ccne\desktop\snake-3.0-master\gui.hpp
+	<iostream>
+

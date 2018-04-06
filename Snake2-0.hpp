@@ -5,6 +5,10 @@
 
 #endif // SNAKE2-0_HPP_INCLUDED
 
+#define PLAIN 0
+#define VOID 1
+#define MATRIX 2
+
 using namespace std;
 
 typedef pair<int,int> ii;

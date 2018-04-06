@@ -5,6 +5,13 @@
 
 #endif // SNAKE2-1_HPP_INCLUDED
 
+
+#define HALF_SIZE 0
+#define FOOD_SPAM 1
+#define INVISIBLE 2
+#define TOXIC_SPAM 3
+#define REVERSE_INPUT 4
+
 using namespace std;
 
 void half_size(SNAKE &snake,int playgroug[][201]);
