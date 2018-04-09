@@ -5,6 +5,7 @@
 
 #endif // SNAKE2-1_HPP_INCLUDED
 
+#include "others.hpp"
 
 #define HALF_SIZE 0
 #define FOOD_SPAM 1
@@ -22,4 +23,4 @@ void toxic_spam(pair<int,int> toxic[30],int playground[][201],int mapW,int mapH)
 void clear_toxic(pair<int,int> toxic[30],int playground[][201]);
 bool reverse_input(SNAKE &snake,int movex[],int movey[],int &dir);
 bool rreverse_input(SNAKE &snake,int movex[],int movey[],int &dir);
-pair<int,int> generate_special_food(int playground[][201],int mapW,int mapH);
+COORDINATION generate_special_food(int playground[][201],int mapW,int mapH);

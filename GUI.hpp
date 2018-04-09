@@ -7,4 +7,11 @@
 
 #include <iostream>
 
+#define PLAY '1'
+#define HTP '2'
+#define HC '3'
+#define QUIT '4'
+
 void printMainMenu();
+void printHowtoPlay();
+void printHighScore(int highscore);

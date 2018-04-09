@@ -21,6 +21,7 @@
 #define LIGHT_YELLOW 14
 #define BRIGHT_WHITE 15
 
+///  Creating a ColorCharacter with color and the symbol
 struct ColorCharacter
 {
     short color;
@@ -28,7 +29,8 @@ struct ColorCharacter
     ColorCharacter (unsigned char _character, short _color);
 };
 
-struct Image {
+/// Create an empty Image (UNUSED)
+/*struct Image {
     std::vector < std::vector < ColorCharacter > > image;
     Image( int row , int column )
     {
@@ -43,15 +45,16 @@ struct Image {
             image.push_back(temp);
         }
     }
-};
+};*/
 
+/// Playground
 class ColorDisplay
 {
     public:
         ColorDisplay( short _xScreeSize , short _yScreenSize , COORD _origin );
         void setColorCharacterAtPosition( const ColorCharacter & colorchar , const COORD & position );
         void setColorCharacterAtPosition( const ColorCharacter & colorchar , short xPosition , short yPosition );
-        void displayImage(const Image & img, const COORD & position);
+        //void displayImage(const Image & img, const COORD & position);
         void resetDisplay();
         void setBackGroundColor(short color);
         void drawingLineHorizontal(int x,int y,int length);

@@ -6,6 +6,7 @@
 #endif // SNAKE_HPP_INCLUDED
 
 #include <algorithm>
+#include "others.hpp"
 
 
 class SNAKE
@@ -18,9 +19,9 @@ public:
     int inviR;
     int L,R;
     int length;
-    std::pair<int,int> coor[1000];
+    COORDINATION coor[1000];
     void generate_snake(int x,int y,int playground[][201]);
-    std::pair<int,int> getHead();
+    COORDINATION getHead();
     void MoveHead(int x,int y);
     void MoveQueue();
     bool PopTail(int playground[][201]);

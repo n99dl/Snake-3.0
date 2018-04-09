@@ -2,12 +2,12 @@
 #include <algorithm>
 #include <ctime>
 #include <cstdlib>
+#include "others.hpp"
 #include "drawing.hpp"
 #include "snake.hpp"
 #include "Snake2-0.hpp"
 
 using namespace std;
-
 
 void half_size(SNAKE &snake,int playground[][201])
 {
@@ -43,6 +43,8 @@ void invisible(SNAKE &snake)
     }
     snake.inviR=snake.L+(snake.R-snake.L+1)/2-1;
 }
+
+/// Reverse invisible
 void reverse_invi(SNAKE &snake)
 {
     snake.inviR=0;
@@ -54,7 +56,9 @@ void reverse_invi(SNAKE &snake)
     clear_notification();
     draw(10,52,11,"Invisible reversed !!");
 }
-pair<int,int> generate_special_food(int playground[][201],int mapW,int mapH)
+
+/// Generating new special food , returning the Coordination
+COORDINATION generate_special_food(int playground[][201],int mapW,int mapH)
 {
     int sf_x=rand()%(mapH-2)+2;
     int sf_y=rand()%(mapW-2)+2;
@@ -78,6 +82,8 @@ void toxic_spam(pair<int,int> toxic[30],int playground[][201],int mapW,int mapH)
     textColor(10+1);
     cout<<"Toxic spam !! (Eat food to clear toxic)";
 }
+
+/// Clear toxic when food is eaten
 
 void clear_toxic(pair<int,int> toxic[30],int playground[][201])
 {
@@ -103,6 +109,8 @@ bool reverse_input(SNAKE &snake,int movex[],int movey[],int &dir)
     snake.set_snakecolor(26);
     return 1;
 }
+
+/// Reverse Reverse Input (Normalizing)
 bool rreverse_input(SNAKE &snake,int movex[],int movey[],int &dir)
 {
     clear_notification();

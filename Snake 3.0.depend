@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1522682038 source:e:\lab\game projects\snake 3.0\main.cpp
+1523193200 source:e:\lab\game projects\snake 3.0\main.cpp
 	<bits/stdc++.h>
 	<windows.h>
 	<conio.h>
@@ -12,15 +12,16 @@
 	"ColorDisplay.h"
 	"GUI.hpp"
 
-1522577555 e:\lab\game projects\snake 3.0\snake2-0.hpp
+1523181795 e:\lab\game projects\snake 3.0\snake2-0.hpp
 
-1522682038 source:e:\lab\game projects\snake 3.0\drawing.cpp
+1523183232 source:e:\lab\game projects\snake 3.0\drawing.cpp
 	<conio.h>
 	<windows.h>
 	<iostream>
+	"drawing.hpp"
 	"ColorDisplay.h"
 
-1522676327 source:e:\lab\game projects\snake 3.0\snake2-0.cpp
+1523193490 source:e:\lab\game projects\snake 3.0\snake2-0.cpp
 	<ctime>
 	<algorithm>
 	<iostream>
@@ -29,58 +30,68 @@
 	"ColorDisplay.h"
 	<conio.h>
 
-1521624838 e:\lab\game projects\snake 3.0\drawing.hpp
+1523183247 e:\lab\game projects\snake 3.0\drawing.hpp
 	<string>
+	<vector>
+	"ColorDisplay.h"
 
-1521725055 e:\lab\game projects\snake 3.0\snake.hpp
+1523181657 e:\lab\game projects\snake 3.0\snake.hpp
 	<algorithm>
+	"others.hpp"
 
-1521647347 source:e:\lab\game projects\snake 3.0\snake2-1.cpp
+1523181831 source:e:\lab\game projects\snake 3.0\snake2-1.cpp
 	<iostream>
 	<algorithm>
 	<ctime>
 	<cstdlib>
+	"others.hpp"
 	"drawing.hpp"
 	"snake.hpp"
 	"Snake2-0.hpp"
 
-1521725923 source:e:\lab\game projects\snake 3.0\snake.cpp
+1523182038 source:e:\lab\game projects\snake 3.0\snake.cpp
 	"snake.hpp"
 	"drawing.hpp"
+	"others.hpp"
 	<iostream>
 
-1521625595 e:\lab\game projects\snake 3.0\others.hpp
+1523191521 e:\lab\game projects\snake 3.0\others.hpp
 	<string>
+	<algorithm>
 
 1521625616 source:e:\lab\game projects\snake 3.0\others.cpp
 	<string>
 	<sstream>
 
-1521647477 e:\lab\game projects\snake 3.0\snake2-1.hpp
+1523181600 e:\lab\game projects\snake 3.0\snake2-1.hpp
+	"others.hpp"
 
-1521648924 e:\lab\game projects\snake 3.0\snake2-2.hpp
+1523017295 e:\lab\game projects\snake 3.0\snake2-2.hpp
 
 1521648743 source:e:\lab\game projects\snake 3.0\snake2-2.cpp
 	<cstdlib>
 	"snake.hpp"
 	"drawing.hpp"
 
-1522586737 source:e:\lab\game projects\snake 3.0\colordisplay.cpp
+1523182937 source:e:\lab\game projects\snake 3.0\colordisplay.cpp
 	"ColorDisplay.h"
 	<iostream>
 
-1522586754 e:\lab\game projects\snake 3.0\colordisplay.h
+1523182923 e:\lab\game projects\snake 3.0\colordisplay.h
 	<windows.h>
 	<vector>
 
-1522682007 e:\lab\game projects\snake 3.0\gui.hpp
+1523192872 e:\lab\game projects\snake 3.0\gui.hpp
 	<iostream>
 
-1522682860 source:e:\lab\game projects\snake 3.0\gui.cpp
+1523192990 source:e:\lab\game projects\snake 3.0\gui.cpp
 	<iostream>
 	<bits/stdc++.h>
 	"drawing.hpp"
 	"ColorDisplay.h"
+	<windows.h>
+	<conio.h>
+	"others.hpp"
 
 1522845958 source:c:\users\ccne\desktop\snake-3.0-master\colordisplay.cpp
 	"ColorDisplay.h"

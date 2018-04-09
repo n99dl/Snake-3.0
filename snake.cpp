@@ -1,9 +1,11 @@
 #include "snake.hpp"
 #include "drawing.hpp"
+#include "others.hpp"
 #include <iostream>
 
 using namespace std;
 
+///Generating a 3-length snake with head at (x,y), body at (x+1,y) (x+2,y)
 void SNAKE::generate_snake(int x,int y,int playground[][201])
 {
     inviR=0;
@@ -26,6 +28,8 @@ void SNAKE::generate_snake(int x,int y,int playground[][201])
     cout<<head_symbol;
     textColor(10);
 }
+
+/// Anti overflow snake queue
 void SNAKE::MoveQueue()
 {
     for (int i=L;i<=R;i++)
@@ -34,6 +38,7 @@ void SNAKE::MoveQueue()
     R-=100;
     if (inviR) inviR-=100;
 }
+/// Create new head of the snack at the new position
 void SNAKE::MoveHead(int x,int y)
 {
     if (L>100)
@@ -43,20 +48,23 @@ void SNAKE::MoveHead(int x,int y)
     draw(coor[R].first,coor[R].second,snakecolor,head_symbol);
     length++;
 }
+/// Delete the tail
 bool SNAKE::PopTail(int playground[][201])
 {
     if (R<L)
         return 0;
-    pair<int,int> last=coor[L++];
+    COORDINATION last=coor[L++];
     playground[last.first][last.second]=0;
     draw(last.first,last.second,17,' ');
     length--;
     return 1;
 }
-pair<int,int> SNAKE::getHead()
+/// Get head's position
+COORDINATION SNAKE::getHead()
 {
     return coor[R];
 }
+
 int SNAKE::get_snakecolor()
 {
     return snakecolor;

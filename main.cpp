@@ -15,9 +15,6 @@ using namespace std;
 ifstream fi;
 ofstream fo;
 
-/// Pair of int as coordination
-typedef pair<int,int> COORDINATION;
-
 const int MAP_WIDTH=50;
 const int MAP_HEIGHT=20;
 /// Managing what is on the playground
@@ -110,7 +107,7 @@ void init(int Map)
     case PLAIN:
         snake.generate_snake(MAP_HEIGHT/2,MAP_WIDTH/2,playground);
         break;
-    case VOID:
+    case MIDVOID:
         snake.generate_snake(10,40,playground);
         break;
     case MATRIX:
@@ -130,14 +127,11 @@ void move()
     {
         if (nheadpos_x==1)
             nheadpos_x=19;
-        else
-        if (nheadpos_x==20)
+        else if (nheadpos_x==20)
             nheadpos_x=2;
-        else
-        if (nheadpos_y==1)
+        else if (nheadpos_y==1)
             nheadpos_y=49;
-        else
-        if (nheadpos_y==50)
+        else if (nheadpos_y==50)
             nheadpos_y=2;
     }
     snake.MoveHead(nheadpos_x,nheadpos_y);
@@ -270,57 +264,66 @@ int main()
     /// Closing file
     srand(time(NULL));
     system("MODE 100,30");
-    printMainMenu();
-    textColor(10);
-    cout<<"n99dl's snake 3.0\n";
-    cout<<"Use WASD or Arrow Key to move the snake. Eat food to earn length\n";
-    cout<<"And... enjoy the special food. Who know what you gonna get?\n";
-    cout<<"\n";
-    cout<<"Earn score to advance to next map. Eat special food give you bonus score !\n";
-    cout<<"Enjoy the game !\n";
-    cout<<"Press [SPACE] to continue";
-    while (1)
+    bool running = 1;
+    while (running)
     {
-        if (kbhit())
+        printMainMenu();
+        start=0;
+        while (!start)
         {
-            char tmp=getch();
-            if (tmp==32)
-                break;
-        }
-    }
-    start = 1;
-    while (start)
-    {
-        score=0;
-        Map=0;
-        clear_notification();
-        speed=choose_speed();
-        run();
-        draw(26,1,10,"Game over! Your final length is " + to_string(snake.length) +"\n");
-        cout<<"Your score is "<<score<<"\n";
-        if (score>bscore)
-        {
-            cout<<" NEW RECORD: "<<score<<"\n";
-            bscore=score;
-        }
-        else
-            cout<<"Best score: "<<bscore<<"\n";
-        /// Opening file to write new local high score
-        fo.open("highscore.txt");
-        fo<<bscore;
-        fo.close();
-        /// Close file
-        cout<<"Would you like to retry ? y/n?\n";
-        while (1)
-        {
+            char cmd=' ';
             if (kbhit())
+                cmd=getch();
+            switch (cmd)
             {
-                char tmp=getch();
-                if (tmp=='n') break;
-                if (tmp=='y')
+            case PLAY:
+                start=1;
+                break;
+            case HTP:
+                printHowtoPlay();
+                break;
+            case HC:
+                printHighScore(bscore);
+                break;
+            case QUIT:
+                exit(0);
+                break;
+            }
+        }
+        start = 1;
+        while (start)
+        {
+            score=0;
+            Map=0;
+            clear_notification();
+            speed=choose_speed();
+            run();
+            draw(26,1,10,"Game over! Your final length is " + to_string(snake.length) +"\n");
+            cout<<"Your score is "<<score<<"\n";
+            if (score>bscore)
+            {
+                cout<<" NEW RECORD: "<<score<<"\n";
+                bscore=score;
+            }
+            else
+                cout<<"Best score: "<<bscore<<"\n";
+            /// Opening file to write new local high score
+            fo.open("highscore.txt");
+            fo<<bscore;
+            fo.close();
+            /// Close file
+            cout<<"Would you like to retry ? y/n?\n";
+            while (1)
+            {
+                if (kbhit())
                 {
-                    start=1;
-                    break;
+                    char tmp=getch();
+                    if (tmp=='n') break;
+                    if (tmp=='y')
+                    {
+                        start=1;
+                        break;
+                    }
                 }
             }
         }

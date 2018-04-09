@@ -8,8 +8,13 @@
 
 using namespace std;
 
+///Print the PLayground using Color Display
 void printPlayground(int playground[][201],int mapH,int mapW,int Map)
 {
+    system("cls");
+    ColorDisplay background(98,28,{1,1});
+    background.setBackGroundColor(BLACK*16+BLACK);
+    background.resetDisplay();
     ColorDisplay screen(48,18,{1,1});
     /*gotoxy(1,1);
     for (int i=1; i<=mapH; i++)
@@ -71,12 +76,14 @@ void printPlayground(int playground[][201],int mapH,int mapW,int Map)
         /*FillConsoleOutputCharacter(outConsole, colorchar.character, 1, position, &garbage);
         FillConsoleOutputAttribute(outConsole, colorchar.color, 1, position, &garbage);*/
     }
-    draw(1,52,10,"Press W or Arrow UP to go up");
-    draw(2,52,10,"Press D to Arrow RIGHT go right");
-    draw(3,52,10,"Press S to Arrow DOWN go down");
-    draw(4,52,10,"Press A to Arrow LEFT go left");
-    draw(5,52,10,"Press P to pause");
+    draw(2,52,10,"Press W or Arrow UP to go up");
+    draw(3,52,10,"Press D to Arrow RIGHT go right");
+    draw(4,52,10,"Press S to Arrow DOWN go down");
+    draw(5,52,10,"Press A to Arrow LEFT go left");
+    draw(6,52,10,"Press P to pause");
 }
+
+///Setup structure of map (3 maps total)
 
 void setup_map(int Map,int mapH,int mapW,int playground[][201])
 {
@@ -109,6 +116,9 @@ void setup_map(int Map,int mapH,int mapW,int playground[][201])
         playground[15][25]=playground[16][25]=0;
     }
 }
+
+///Generate food on the playground
+
 pair<int,int> generate_food(int regenerate,int playground[][201],int mapW,int mapH)
 {
     int x,y;
@@ -140,6 +150,8 @@ pair<int,int> generate_food(int regenerate,int playground[][201],int mapW,int ma
     return make_pair(x,y);
 }
 
+///Speed chosing
+
 int choose_speed()
 {
     int speed;
@@ -161,6 +173,8 @@ int choose_speed()
     speed=speed*30+680;
     return speed;
 }
+
+///Direction changing
 void changedir(int &dir)
 {
     char ndir=getch();

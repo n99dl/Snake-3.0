@@ -15,7 +15,6 @@ ColorDisplay::ColorDisplay( short _xScreeSize, short _yScreenSize, COORD _origin
     xScreenSize = _xScreeSize;
     yScreenSize = _yScreenSize;
 }
-
 void ColorDisplay::setColorCharacterAtPosition( const ColorCharacter & colorchar, const COORD & position)
 {
     DWORD garbage = 0;
@@ -108,7 +107,9 @@ void ColorDisplay::drawingLineVertical(int x,int y,int length)
     for (; temp.Y < y+length; temp.Y++)
     setColorCharacterAtPosition(ColorCharacter(179,BRIGHT_WHITE), temp);
 }
-void ColorDisplay::displayImage( const Image & img, const COORD & position )
+
+///DisplayImage (Unused)
+/*void ColorDisplay::displayImage( const Image & img, const COORD & position )
 {
     COORD pos;
     pos.Y = position.Y + origin.Y;
@@ -121,7 +122,7 @@ void ColorDisplay::displayImage( const Image & img, const COORD & position )
         }
     }
 
-}
+}*/
 
 void ColorDisplay::setBackGroundColor(short color)
 {

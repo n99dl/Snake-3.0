@@ -6,7 +6,7 @@
 #endif // SNAKE2-0_HPP_INCLUDED
 
 #define PLAIN 0
-#define VOID 1
+#define MIDVOID 1
 #define MATRIX 2
 
 using namespace std;
