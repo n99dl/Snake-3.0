@@ -15,3 +15,5 @@
 void printMainMenu();
 void printHowtoPlay();
 void printHighScore(int highscore);
+int gameOver(int length,int score,int bscore);
+void gameClear(int length,int score,int bscore);

@@ -13,3 +13,5 @@
 typedef std::pair<int,int> COORDINATION;
 
 std::string to_string( int n );
+int getHighscore();
+void modHighscore(int& highscore,int score);

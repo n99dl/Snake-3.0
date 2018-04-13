@@ -78,20 +78,7 @@ void init(int Map)
     {
         system("cls");
         textColor(10);
-        cout<<"Just kidding, there isn't Stage 4, You cleared the game! Congratulation\n";
-        cout<<"Your final score is "<<score<<"\n";
-        if (score>bscore)
-        {
-            cout<<" NEW RECORD: "<<score<<"\n";
-            bscore=score;
-        }
-        else
-            cout<<"Best score: "<<bscore<<"\n\n";
-        cout<<"Credit\n\n";
-        cout<<"Me - Do everything lol\n";
-        cout<<"Thank you for playing my game\n";
-        cout<<"Press [Enter] to exit";
-        fo<<bscore;
+        gameClear(snake.length,score,bscore);
         while (1)
         {
             if (getch()==13)
@@ -257,11 +244,7 @@ void run()
 
 int main()
 {
-    /// Opening file to read local high score
-    fi.open("highscore.txt");
-    fi>>bscore;
-    fi.close();
-    /// Closing file
+    score=getHighscore();
     srand(time(NULL));
     system("MODE 100,30");
     bool running = 1;
@@ -298,34 +281,7 @@ int main()
             clear_notification();
             speed=choose_speed();
             run();
-            draw(26,1,10,"Game over! Your final length is " + to_string(snake.length) +"\n");
-            cout<<"Your score is "<<score<<"\n";
-            if (score>bscore)
-            {
-                cout<<" NEW RECORD: "<<score<<"\n";
-                bscore=score;
-            }
-            else
-                cout<<"Best score: "<<bscore<<"\n";
-            /// Opening file to write new local high score
-            fo.open("highscore.txt");
-            fo<<bscore;
-            fo.close();
-            /// Close file
-            cout<<"Would you like to retry ? y/n?\n";
-            while (1)
-            {
-                if (kbhit())
-                {
-                    char tmp=getch();
-                    if (tmp=='n') break;
-                    if (tmp=='y')
-                    {
-                        start=1;
-                        break;
-                    }
-                }
-            }
+            start=gameOver(snake.length,score,bscore);
         }
     }
     return 0;

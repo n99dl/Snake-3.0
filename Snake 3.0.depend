@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1523193200 source:e:\lab\game projects\snake 3.0\main.cpp
+1523278640 source:e:\lab\game projects\snake 3.0\main.cpp
 	<bits/stdc++.h>
 	<windows.h>
 	<conio.h>
@@ -55,13 +55,16 @@
 	"others.hpp"
 	<iostream>
 
-1523191521 e:\lab\game projects\snake 3.0\others.hpp
+1523276343 e:\lab\game projects\snake 3.0\others.hpp
 	<string>
 	<algorithm>
 
-1521625616 source:e:\lab\game projects\snake 3.0\others.cpp
+1523276846 source:e:\lab\game projects\snake 3.0\others.cpp
 	<string>
 	<sstream>
+	<fstream>
+	<iostream>
+	"drawing.hpp"
 
 1523181600 e:\lab\game projects\snake 3.0\snake2-1.hpp
 	"others.hpp"
@@ -81,10 +84,10 @@
 	<windows.h>
 	<vector>
 
-1523192872 e:\lab\game projects\snake 3.0\gui.hpp
+1523278738 e:\lab\game projects\snake 3.0\gui.hpp
 	<iostream>
 
-1523192990 source:e:\lab\game projects\snake 3.0\gui.cpp
+1523280957 source:e:\lab\game projects\snake 3.0\gui.cpp
 	<iostream>
 	<bits/stdc++.h>
 	"drawing.hpp"
