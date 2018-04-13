@@ -4,6 +4,7 @@
 #include <windows.h>
 #include "drawing.hpp"
 #include "ColorDisplay.h"
+#include "Snake2-0.hpp"
 #include <conio.h>
 
 using namespace std;
@@ -160,7 +161,7 @@ int choose_speed()
     {
         system("cls");
         speed=0;
-        draw(7,52,10,"Choose level (1-10) :");
+        draw(7,52,LIGHT_GREEN,"Choose level (1-10) :");
         cin>>speed;
         if (speed<1||speed>10)
         {
@@ -180,13 +181,13 @@ void changedir(int &dir)
     char ndir=getch();
     if (ndir=='p')
     {
-        draw(13,52,10,"Game pause ! Press anykey to resume");
+        draw(13,52,LIGHT_GREEN,"Game pause ! Press anykey to resume");
         while (!kbhit());
-        draw(13,52,10,"                                   ");
+        draw(13,52,LIGHT_GREEN,"                                   ");
     }
-    if ((ndir=='w'||ndir==72)&&dir!=3) dir=1;
-    if ((ndir=='d'||ndir==77)&&dir!=4) dir=2;
-    if ((ndir=='s'||ndir==80)&&dir!=1) dir=3;
-    if ((ndir=='a'||ndir==75)&&dir!=2) dir=4;
+    if ((ndir=='w'||ndir==UP_ARROW)&&dir!=DOWN) dir=UP;
+    if ((ndir=='d'||ndir==RIGHT_ARROW)&&dir!=LEFT) dir=RIGHT;
+    if ((ndir=='s'||ndir==DOWN_ARROW)&&dir!=UP) dir=DOWN;
+    if ((ndir=='a'||ndir==LEFT_ARROW)&&dir!=RIGHT) dir=LEFT;
 }
 

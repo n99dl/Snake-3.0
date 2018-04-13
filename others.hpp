@@ -9,6 +9,7 @@
 #include <algorithm>
 
 #define SPACE 32
+#define ENTER 13
 /// Pair of int as coordination
 typedef std::pair<int,int> COORDINATION;
 

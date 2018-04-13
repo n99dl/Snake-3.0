@@ -31,7 +31,6 @@ void modHighscore(int& highscore,int score)
     draw(27,2,10,"Your score is "+to_string(score));
     if (score>highscore)
     {
-        cout<<" NEW RECORD: "<<score<<"\n";
         draw(28,2,10," NEW RECORD: "+to_string(score));
         highscore=score;
     }

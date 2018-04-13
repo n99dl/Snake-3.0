@@ -1,5 +1,4 @@
 #include <iostream>
-#include <bits/stdc++.h>
 #include "drawing.hpp"
 #include "ColorDisplay.h"
 #include <windows.h>
@@ -15,7 +14,7 @@ void printMainMenu()
     ColorDisplay background(98,28, {1,1});
     background.setBackGroundColor(bgcolor+BLACK);
     background.resetDisplay();
-    draw(29,47,bgcolor+LIGHT_PURPLE,"3.3.1");
+    draw(29,47,bgcolor+LIGHT_PURPLE,"3.3.2");
     ///Header
     IMAGE snake(9,bgcolor+WHITE);
     snake.image=   {"      _  _  _  _                                  _                          ",

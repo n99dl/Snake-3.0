@@ -96,68 +96,82 @@
 	<conio.h>
 	"others.hpp"
 
-1522845958 source:c:\users\ccne\desktop\snake-3.0-master\colordisplay.cpp
+1523548880 source:c:\users\ccne\desktop\snake-3.0-master\colordisplay.cpp
 	"ColorDisplay.h"
 	<iostream>
 
-1522845958 c:\users\ccne\desktop\snake-3.0-master\colordisplay.h
+1523548880 c:\users\ccne\desktop\snake-3.0-master\colordisplay.h
 	<windows.h>
 	<vector>
 
-1522845958 source:c:\users\ccne\desktop\snake-3.0-master\drawing.cpp
+1523548880 source:c:\users\ccne\desktop\snake-3.0-master\drawing.cpp
 	<conio.h>
 	<windows.h>
 	<iostream>
-	"ColorDisplay.h"
-
-1522845958 source:c:\users\ccne\desktop\snake-3.0-master\gui.cpp
-	<iostream>
-	<bits/stdc++.h>
 	"drawing.hpp"
 	"ColorDisplay.h"
 
-1522845958 c:\users\ccne\desktop\snake-3.0-master\drawing.hpp
-	<string>
+1523602265 source:c:\users\ccne\desktop\snake-3.0-master\gui.cpp
+	<iostream>
+	"drawing.hpp"
+	"ColorDisplay.h"
+	<windows.h>
+	<conio.h>
+	"others.hpp"
 
-1522845958 source:c:\users\ccne\desktop\snake-3.0-master\others.cpp
+1523548880 c:\users\ccne\desktop\snake-3.0-master\drawing.hpp
+	<string>
+	<vector>
+	"ColorDisplay.h"
+
+1523601483 source:c:\users\ccne\desktop\snake-3.0-master\others.cpp
 	<string>
 	<sstream>
+	<fstream>
+	<iostream>
+	"drawing.hpp"
 
-1522845958 source:c:\users\ccne\desktop\snake-3.0-master\snake.cpp
+1523601610 source:c:\users\ccne\desktop\snake-3.0-master\snake.cpp
 	"snake.hpp"
 	"drawing.hpp"
+	"others.hpp"
 	<iostream>
 
-1522845958 c:\users\ccne\desktop\snake-3.0-master\snake.hpp
+1523548880 c:\users\ccne\desktop\snake-3.0-master\snake.hpp
 	<algorithm>
+	"others.hpp"
 
-1522845958 source:c:\users\ccne\desktop\snake-3.0-master\snake2-0.cpp
+1523602247 source:c:\users\ccne\desktop\snake-3.0-master\snake2-0.cpp
 	<ctime>
 	<algorithm>
 	<iostream>
 	<windows.h>
 	"drawing.hpp"
 	"ColorDisplay.h"
+	"Snake2-0.hpp"
 	<conio.h>
 
-1522998817 source:c:\users\ccne\desktop\snake-3.0-master\snake2-1.cpp
+1523548880 source:c:\users\ccne\desktop\snake-3.0-master\snake2-1.cpp
 	<iostream>
 	<algorithm>
 	<ctime>
 	<cstdlib>
+	"others.hpp"
 	"drawing.hpp"
 	"snake.hpp"
 	"Snake2-0.hpp"
 
-1522999283 c:\users\ccne\desktop\snake-3.0-master\snake2-0.hpp
+1523602208 c:\users\ccne\desktop\snake-3.0-master\snake2-0.hpp
 
-1522845958 source:c:\users\ccne\desktop\snake-3.0-master\snake2-2.cpp
+1523548880 source:c:\users\ccne\desktop\snake-3.0-master\snake2-2.cpp
 	<cstdlib>
 	"snake.hpp"
 	"drawing.hpp"
 
-1522999289 source:c:\users\ccne\desktop\snake-3.0-master\main.cpp
-	<bits/stdc++.h>
+1523602208 source:c:\users\ccne\desktop\snake-3.0-master\main.cpp
+	<algorithm>
+	<cstdlib>
+	<ctime>
 	<windows.h>
 	<conio.h>
 	"Snake2-0.hpp"
@@ -169,13 +183,15 @@
 	"ColorDisplay.h"
 	"GUI.hpp"
 
-1522845958 c:\users\ccne\desktop\snake-3.0-master\others.hpp
+1523601734 c:\users\ccne\desktop\snake-3.0-master\others.hpp
 	<string>
+	<algorithm>
 
-1522998830 c:\users\ccne\desktop\snake-3.0-master\snake2-1.hpp
+1523548880 c:\users\ccne\desktop\snake-3.0-master\snake2-1.hpp
+	"others.hpp"
 
-1522998849 c:\users\ccne\desktop\snake-3.0-master\snake2-2.hpp
+1523548880 c:\users\ccne\desktop\snake-3.0-master\snake2-2.hpp
 
-1522845958 c:\users\ccne\desktop\snake-3.0-master\gui.hpp
+1523548880 c:\users\ccne\desktop\snake-3.0-master\gui.hpp
 	<iostream>
 

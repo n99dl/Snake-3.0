@@ -1,4 +1,6 @@
-#include <bits/stdc++.h>
+#include <algorithm>
+#include <cstdlib>
+#include <ctime>
 #include <windows.h>
 #include <conio.h>
 #include "Snake2-0.hpp"                 ///First update : Setting up maps (3 maps), Print Playground and normal controls of the snake.
@@ -11,9 +13,6 @@
 #include "GUI.hpp"                      ///Graphic User Interface : Drawing Main menu and other notifications.
 
 using namespace std;
-
-ifstream fi;
-ofstream fo;
 
 const int MAP_WIDTH=50;
 const int MAP_HEIGHT=20;
@@ -34,6 +33,7 @@ int food;
 int require[]= {50,150,1000};
 ///Snake 2.2
 int Map=0;
+/// COORDINATION of special food
 COORDINATION sf;
 COORDINATION toxic[30+1];
 bool inputR=0;
@@ -77,11 +77,10 @@ void init(int Map)
     if (Map==3)
     {
         system("cls");
-        textColor(10);
         gameClear(snake.length,score,bscore);
         while (1)
         {
-            if (getch()==13)
+            if (getch()==ENTER)
                 exit(0);
         }
     }
@@ -205,21 +204,20 @@ void run()
         special_food_init();
         system("cls");
         init(Map);
-        gotoxy(22,14);
-        draw(22,14,10,"Press [Enter] to start");
-        draw(24,14,10,"Stage " + to_string(Map+1));
+        draw(22,14,LIGHT_GREEN,"Press [Enter] to start");
+        draw(24,14,LIGHT_GREEN,"Stage " + to_string(Map+1));
         while (1)
         {
-            if (getch()==13)
+            if (getch()==ENTER)
                 break;
         }
         start=1;
         while (start)
         {
-            draw(19,52,10,"Reach ");
-            textColor(13);
+            draw(19,52,LIGHT_GREEN,"Reach ");
+            textColor(LIGHT_PURPLE);
             cout<<require[Map];
-            textColor(10);
+            textColor(LIGHT_GREEN);
             cout<<" to move to next map !";
             if (kbhit())
                 changedir(dir);
@@ -229,10 +227,9 @@ void run()
                 Map++;
                 break;
             }
-            draw(22,54,10,"Your score: ");
-            textColor(13);
+            draw(22,54,LIGHT_GREEN,"Your score: ");
+            textColor(LIGHT_PURPLE);
             cout<<score;
-            draw(23,54,19,to_string(snake.L)+"   "+to_string(snake.R)+"    "+to_string(snake.length));
             if (dir==2||dir==4)
                 Sleep(1000-speed);
             else

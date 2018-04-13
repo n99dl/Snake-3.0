@@ -8,6 +8,14 @@
 #define PLAIN 0
 #define MIDVOID 1
 #define MATRIX 2
+#define UP_ARROW 72
+#define RIGHT_ARROW 77
+#define DOWN_ARROW 80
+#define LEFT_ARROW 75
+#define UP 1
+#define RIGHT 2
+#define DOWN 3
+#define LEFT 4
 
 using namespace std;
 

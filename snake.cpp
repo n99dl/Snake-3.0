@@ -10,7 +10,7 @@ void SNAKE::generate_snake(int x,int y,int playground[][201])
 {
     inviR=0;
     sn_symbol=219;
-    head_symbol=233;
+    head_symbol=254;
     snakecolor=30;
     L=1;
     R=0;
